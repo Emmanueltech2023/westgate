@@ -1,0 +1,261 @@
+/* ---------------------------
+   Mobile-first base & reset
+   --------------------------- */
+* { box-sizing: border-box; margin:0; padding:0; }
+html,body { height:100%; }
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  /* background: #faf6f4; */
+  background: linear-gradient(90deg, #5f3d3d, #605d5d);
+  color: #222;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Color tokens */
+:root{
+  --maroon:rgba(0, 0, 0, 0.888);
+  --maroon-2:#8c3b3b;
+  --warm-brown:#7b4337;
+  --card:#ffffff;
+  --muted:#f3eeec;
+  --accent:#6f2f2f;
+  --shadow: 0 6px 18px rgba(15,10,10,0.06);
+}
+
+
+#spinner{
+  /* background-image: url(/image/slider-02.webp); */
+  background-repeat: repeat;
+  width: 100%;
+  
+}
+
+.spinner{
+  background-color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+  overflow-y: hidden;
+  display: flex;
+}
+
+#spin{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 250px;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin{
+  0%{transform: rotate('0deg');}
+  100%{transform: rotate(360deg);}
+}
+
+
+
+/* ---------- Header (sticky) ---------- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+   background: linear-gradient(180deg,var(--maroon), #4f1b1bbe);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  padding: 12px 10px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.header-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+/* brand */
+.brand { display:flex; align-items:center; gap:10px; }
+.logo {
+  width:44px; height:44px; border-radius:10px;
+  background: #ffffff4f;
+  display:flex; align-items:center; justify-content:center; font-weight:700; color:#fff;
+}
+.logo img { width:102px; height:102px; object-fit:contain; }
+.brand-text strong{ display:block; font-size:14px; letter-spacing:.4px; }
+.brand-text small{ font-size:11px; opacity:.9; }
+
+/* tabs */
+.tabs { display:flex; gap:8px; }
+.tab {
+  background: rgba(255, 255, 255, 0.256);
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight:700;
+  cursor: pointer;
+  transition: transform .12s ease, background .18s ease;
+}
+.tab:active { transform: translateY(1px); }
+.tab.active {
+  background: #fff;
+  color: var(--maroon);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* ---------- Pills (scrollable) ---------- */
+.pills-wrap { background: #fff; border-bottom:1px solid #eee;}
+.pills {
+  max-width:980px;
+  margin:0 auto;
+  padding:10px;
+  display:flex;
+  gap:10px;
+  overflow:auto;
+  -webkit-overflow-scrolling: touch;
+}
+.pills::-webkit-scrollbar { height:8px; }
+.category {
+  padding:8px 14px;
+  border-radius:999px;
+  background:#fff;
+  border:1px solid #e7e2e1;
+  font-weight:600;
+  font-size: 17px;
+  cursor:pointer;
+  white-space:nowrap;
+  transition: background .18s ease, transform .12s;
+}
+.category:active { transform: translateY(1px); }
+.category.active {
+  background: var(--maroon);
+  color:#fff;
+  border-color:transparent;
+  box-shadow: 0 6px 14px rgba(111,47,47,0.14);
+}
+
+/* ---------- Content (menu grid) ---------- */
+.content {
+  max-width: 980px;
+  margin: 14px auto;
+  padding: 0 12px;
+}
+
+/* grid auto-fit for cards, list items will span */
+.menu-grid {
+  display:grid;
+  gap:14px;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+}
+
+/* Card style */
+.menu-card {
+  background: var(--card);
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow: var(--shadow);
+  transition: transform .14s ease, box-shadow .14s;
+}
+.menu-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(15,10,10,0.08); }
+.menu-card img{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+  display:block;
+}
+.card-body { padding:10px; }
+.card-body h3 { font-size:15px; margin-bottom:6px; }
+.card-body p.desc { font-size:13px; color:#6b6b6b; margin-bottom:8px; min-height:34px; }
+.card-body .meta { display:flex; gap:8px; align-items:center; justify-content:space-between; }
+
+/* tag badge small */
+.badge {
+  display:inline-block;
+  padding:7px 8px;
+  text-align: center;
+  font-size:12px;
+  border-radius:999px;
+  background: rgba(128, 128, 128, 0.31);
+  color: var(--maroon);
+  font-weight:700;
+   margin-right: 6px; 
+  margin-bottom: 4px;
+}
+
+/* price pill inside card */
+.price-pill {
+  background: var(--maroon);
+  color: #fff;
+  padding:6px 10px;
+  border-radius:999px;
+  font-weight:700;
+  font-size:15px;
+}
+
+/* List item style (span full width) */
+.menu-list-item {
+  background: var(--card);
+  border-radius:10px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 14px;
+  box-shadow: 0 6px 18px rgba(15,10,10,0.03);
+  transition: transform .12s;
+}
+.menu-list-item:hover { transform: translateY(-4px); }
+.menu-list-item .title { font-weight:700;font-size: 20px; }
+.menu-list-item .sm { color:#666; font-size:13px; }
+.menu-list-item .price-tag {
+  background: var(--maroon);
+  color:#fff;
+  padding:6px 12px;
+  border-radius:999px;
+  font-weight:800;
+}
+
+footer{
+    background: linear-gradient(180deg,black, #4f1b1b);
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #fff; 
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    margin-top: 20px;
+    height: 50px;
+   position: sticky;
+    bottom: 0; 
+}
+.foot{
+    margin-top: -10px;
+  animation: scroll 8s linear infinite;
+}
+@keyframes scroll {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+
+/* helper for list groups to span grid columns */
+.list-span { grid-column: 1 / -1; }
+
+/* empty / hint */
+.hint { padding:18px; text-align:center; color:#666; }
+
+/* ---------- Responsive tweaks ---------- */
+@media(min-width:900px){
+  .menu-card img { height:180px; }
+}
+@media(min-width:1100px){
+  .menu-grid { grid-template-columns: repeat(3, 1fr); }
+}

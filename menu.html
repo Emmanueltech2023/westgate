@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Westgate Arena — Digital Menu</title>
+  <link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+<div class="spinal" style="overflow-y: hidden;" id="spi">
+    <p style="border: 20px solid black; border-top: solid transparent 20px; border-bottom: solid transparent 20px; border-radius: 50%; height: 150px; width: 150px;" id="spin" ><img src="image/ChatGPT Image Sep 22, 2025, 10_34_13 PM.png" alt=""></p>
+  </div>
+  <div id="spinner" style="display: none;">
+  <!-- Sticky header with tabs -->
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="logo"><img src="image/ChatGPT Image Sep 22, 2025, 10_34_13 PM.png" alt=""></div>
+        <div class="brand-text">
+          <strong>WESTGATE SQUARE</strong>
+          <small style="font-size: 15px;"> Menu List</small>
+        </div>
+      </div>
+
+      <nav class="tabs" role="tablist" aria-label="Food and Drinks tabs">
+        <button class="tab active" data-tab="food" role="tab" aria-selected="true">FINGER FOOD</button>
+        <button class="tab" data-tab="drinks" role="tab" aria-selected="false">DRINKS</button>
+      </nav>
+    </div>
+  </header>
+  <!-- Scrollable category pills -->
+  <div class="pills-wrap" aria-hidden="false">
+    <div id="pills" class="pills" role="tablist" aria-label="Menu categories">
+      <!-- pills injected by JS -->
+    </div>
+  </div>
+
+  <!-- Main dynamic content -->
+  <main id="content" class="content" role="main" aria-live="polite">
+    <!-- menu content injected by JS -->
+  </main>
+  <br><br>
+
+  <footer class="footer">
+    <div class="foot">
+      <p><i>THANKS FOR YOUR PATRONAGE</i></p>
+    <small>© WESTGATE ARENA</small>
+    </div>
+  </footer>
+  </div>
+
+  <script src="js/menu.js"></script>
+</body>
+</html>
