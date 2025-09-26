@@ -126,7 +126,7 @@ drinks: {
   ],
 
   "Vodka": [
-    { type: "card", title: "Ciroc Vodka", price: "₦46,000",img:"/image/ciroc.jpg", tags:["popular"] },
+    { type: "card", title: "Ciroc Vodka", price: "₦46,000",img:"/image/Ciroc.jpg", tags:["popular"] },
     { type: "card", title: "Sky Vodka", price: "₦25,000",img:"/image/sky.jpg", tags:["popular"] },
     { type: "list", title: "smirnoff vodka 1ltr", price: "₦20,000" },
     { type: "list", title: "SKY VODKA SMALL 200ML", price: "₦4,000" },
