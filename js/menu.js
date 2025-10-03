@@ -19,25 +19,25 @@ const MENU = {
         
     ],
       "Pepper Soup": [
-    { type: "card", title: "Catfish Pepper Soup [40K]", price: "₦40,000", img:"/image/catfish_soup.JPG", tags:["signature","popular"] },
-    { type: "card", title: "Croacker Fish Pepper Soup [20K]", price: "₦20,000", img:"/image/croaker_soup.jpg", tags:["signature","popular"] },
+    { type: "card", title: "Catfish Pepper Soup [40K]", price: "₦40,000", img:"/image/catfish_soup.JPG", tags:["popular"] },
+    { type: "card", title: "Croacker Fish Pepper Soup [20K]", price: "₦20,000", img:"/image/croaker_soup.jpg", tags:["popular"] },
     { type: "list", title: "Catfish Pepper Soup [35K]", price: "₦35,000" },
     { type: "list", title: "Catfish Pepper Soup [30K]", price: "₦30,000" },
     { type: "list", title: "Croacker Fish Pepper Soup [18K]", price: "₦18,000" },
-    { type: "list", title: "Croacker Fish Pepper Soup [15K]", price: "₦15,000" },
-     { type: "list", title: "Turkey Pepper Soup", price: "₦8,000" },
-      { type: "list", title: "Cowtail & Yam Pepper Soup", price: "₦8,000" },
+        { type: "list", title: "Croacker Fish Pepper Soup [15K]", price: "₦15,000" },
+        { type: "list", title: "Turkey Pepper Soup", price: "₦8,000" },
+        { type: "list", title: "Cowtail & Yam Pepper Soup", price: "₦8,000" },
         { type: "list", title: "Cowtail Pepper Soup", price: "₦6,000" },
         { type: "list", title: "Goat Meat and Yam Pepper Soup", price: "₦8,000" },
         { type: "list", title: "Goat Meat Pepper Soup", price: "₦7,000" },
         { type: "list", title: "Assorted and Yam Pepper Soup", price: "₦8,000" },
-         { type: "list", title: "Boiled Yam & Turkey, BiscuitBone Pepper Soup", price: "₦10,000" },
+        { type: "list", title: "Boiled Yam & Turkey, BiscuitBone Pepper Soup", price: "₦10,000" },
         { type: "list", title: "Chicken Pepper Soup", price: "₦10,000" },
-    { type: "list", title: "Dry Fish Pepper Soup", price: "₦12,000" },
+        { type: "list", title: "Dry Fish Pepper Soup", price: "₦12,000" },
   
   ],
       "Meat & Fish": [
-        { type: "card", title: "Isi Ewu", price: "₦15,000", img:"/image/isi.jpg", tags:["signature","popular"] },
+        { type: "card", title: "Isi Ewu", price: "₦15,000", img:"/image/isi.jpg", tags:["popular"] },
         { type: "card", title: "Nkwobi", price: "₦7,000", img:"/image/nkwobi-.png", tags:["popular"] },
         { type: "list", title: "Chicken Nkwobi", price: "₦10,000" },
         { type: "list", title: "Pepper Chicken", price: "₦5,000" },
@@ -178,7 +178,7 @@ drinks: {
   ],
 
   "Cognac/Brandy": [
-    { type: "card", title: "Hennesey VS Cognac 70cl", price: "₦100,000", img:"/image/glen.webp", tags:["popular"] },
+    { type: "card", title: "Hennesey VS Cognac 70cl", price: "₦100,000", img:"/image/vs.avif", tags:["popular"] },
     { type: "card", title: "Hennesey VSOP Cognac 70cl", price: "₦200,000", img:"/image/vsop.webp", tags:["popular"]  },
     { type: "list", title: "Remy Martin 1738", price: "₦130,000" },
     { type: "list", title: "MARTELL BLUE SWIFT 750ML", price: "₦160,000" },
