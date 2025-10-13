@@ -71,7 +71,7 @@ drinks: {
     { type: "list", title: "BIG BABEJE", price: "₦1,500" },
     { type: "list", title: "KOLAQ", price: "₦2,000" },
     { type: "list", title: "ODOGWU BITTERS", price: "₦2,000" },
-    { type: "list", title: "ODOGWU BITTERS", price: "₦1,200" },
+    // { type: "list", title: "ODOGWU BITTERS", price: "₦1,200" },
     { type: "list", title: "ACE BITTERS 20CL", price: "₦2,000" },
     { type: "list", title: "ALOMO BITTERS 200ML", price: "₦2,000" },
     { type: "list", title: "STRONGOO BITTERS 200ML", price: "₦1,500" },
@@ -158,11 +158,8 @@ drinks: {
   "Liqueur": [
     { type: "card", title: "Baileys Irish Cream 70cl", price: "₦45,000",img:"/image/baileys.png", tags:["popular"] },
     { type: "card", title: "BEST MARULA CREAM BIG", price: "₦20,000",img:"image/Best_cream_75cl_Case.jpg", tags:["popular"] },
-    { type: "list", title: "Best Honey Cream Big", price: "₦15,800" },
+    { type: "list", title: "AMARULA 750ML", price: "₦20,000" },
     { type: "list", title: "BEST MARULA CREAM small", price: "₦4,500" },
-    { type: "list", title: "Captain Jack Big", price: "₦2,000" },
-    { type: "list", title: "CAPTAIN JACK 200ML", price: "₦1,000" },
-    { type: "list", title: "Captain Jack(Small)", price: "₦500" },
     { type: "list", title: "Jagermeilter", price: "₦35,000" }
   ],
 
@@ -173,7 +170,7 @@ drinks: {
     { type: "list", title: "Gordons", price: "₦20,000" },
     { type: "list", title: "CAPTAIN MORGAN", price: "₦20,000" },
     { type: "list", title: "BLACK ISLAND CAFE RUM 750ML", price: "₦20,000" },
-    { type: "list", title: "SMALL GORDONS 18CL", price: "₦3,500" },
+    { type: "list", title: "SMALL GORDONS 18CL", price: "₦6,000" },
     { type: "list", title: "GORDON'S DRY GIN MORINGA CITRUS BLEND 305ML", price: "₦6,000" }
   ],
 
