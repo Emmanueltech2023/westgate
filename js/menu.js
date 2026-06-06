@@ -2,54 +2,54 @@
 const MENU = {
   food: {
     "Mains": [
-      { type:"card", title:"Ofada Rice", desc:"Traditional ofada, spicy sauce with assorted meat", price:"₦3,000", tags:["popular"], img:"/image/ofada.jpg", tags:["signature","popular"] },
+      { type:"card", title:"Ofada Rice", desc:"Traditional ofada, spicy sauce with assorted meat", price:"₦5,000", tags:["popular"], img:"/image/ofada.jpg", tags:["signature","popular"] },
       { type:"card", title:"White Rice & Stew", desc:"Smoky tomato stew", price:"₦2,000", img:"/image/rice.png", tags:["popular"] },
-      { type: "list", title: "Spicy Gizzard", price: "₦3,500" },
-      { type: "list", title: "Spicy Pomo", price: "₦3,500" },
+      { type: "list", title: "Spicy Gizzard", price: "₦7,000" },
+      { type: "list", title: "Spicy Pomo", price: "₦7,000" },
       { type: "list", title: "Spicy Turkey", price: "₦7,000" },
     { type: "list", title: "Spicy Turkey with Fries", price: "₦7,000" },
-    { type: "list", title: "Yam and Egg Sauce", price: "₦4,500" },
-    { type: "list", title: "Indomie and Egg", price: "₦3,000" },
-    { type: "list", title: "Indomie, Egg with Sardine", price: "₦5,500" },
+    { type: "list", title: "Yam and Egg Sauce", price: "₦7,000" },
+    { type: "list", title: "Indomie and Egg", price: "₦7,000" },
+    { type: "list", title: "Indomie, Egg with Sardine", price: "₦8,000" },
      { type: "list", title: "Scrambled Egg with Sardine", price: "₦4,000" },
-    { type: "list", title: "Plantain", price: "₦2,000" },
-    { type: "list", title: "Fried Yam", price: "₦2,000" },
+    { type: "list", title: "Plantain", price: "₦3,000" },
+    { type: "list", title: "Fried Yam", price: "₦3,000" },
     { type: "list", title: "Boiled Yam", price: "₦2,000" },
-    { type: "list", title: "Extra Ofada Rice", price: "₦1,500" }
+    { type: "list", title: "Extra Ofada Rice", price: "₦2,000" }
         
     ],
       "Pepper Soup": [
-    { type: "card", title: "Catfish Pepper Soup [40K]", price: "₦40,000", img:"/image/catfish_soup.JPG", tags:["popular"] },
-    { type: "card", title: "Croacker Fish Pepper Soup [20K]", price: "₦20,000", img:"/image/croaker_soup.jpg", tags:["popular"] },
+    { type: "card", title: "Catfish Pepper Soup [45K]", price: "₦45,000", img:"/image/catfish_soup.JPG", tags:["popular"] },
+    { type: "card", title: "Croacker Fish Pepper Soup [25K]", price: "₦25,000", img:"/image/croaker_soup.jpg", tags:["popular"] },
+    { type: "list", title: "Catfish Pepper Soup [40K]", price: "₦40,000" },
     { type: "list", title: "Catfish Pepper Soup [35K]", price: "₦35,000" },
-    { type: "list", title: "Catfish Pepper Soup [30K]", price: "₦30,000" },
     { type: "list", title: "Croacker Fish Pepper Soup [18K]", price: "₦18,000" },
-        { type: "list", title: "Croacker Fish Pepper Soup [15K]", price: "₦15,000" },
-        { type: "list", title: "Turkey Pepper Soup", price: "₦8,000" },
+        { type: "list", title: "Croacker Fish Pepper Soup [20K]", price: "₦20,000" },
+        { type: "list", title: "Turkey Pepper Soup", price: "₦12,000" },
         { type: "list", title: "Cowtail & Yam Pepper Soup", price: "₦8,000" },
-        { type: "list", title: "Cowtail Pepper Soup", price: "₦6,000" },
+        { type: "list", title: "Cowtail Pepper Soup", price: "₦10,500" },
         { type: "list", title: "Goat Meat and Yam Pepper Soup", price: "₦8,000" },
-        { type: "list", title: "Goat Meat Pepper Soup", price: "₦7,000" },
-        { type: "list", title: "Assorted and Yam Pepper Soup", price: "₦8,000" },
+        { type: "list", title: "Goat Meat Pepper Soup", price: "₦10,500" },
+        { type: "list", title: "Assorted and Yam Pepper Soup", price: "₦10,500" },
         { type: "list", title: "Boiled Yam & Turkey, BiscuitBone Pepper Soup", price: "₦10,000" },
-        { type: "list", title: "Chicken Pepper Soup", price: "₦10,000" },
+        { type: "list", title: "Chicken Pepper Soup + Yam", price: "₦10,000" },
         { type: "list", title: "Dry Fish Pepper Soup", price: "₦12,000" },
   
   ],
       "Meat & Fish": [
         { type: "card", title: "Isi Ewu", price: "₦15,000", img:"/image/isi.jpg", tags:["popular"] },
-        { type: "card", title: "Nkwobi", price: "₦7,000", img:"/image/nkwobi-.png", tags:["popular"] },
+        { type: "card", title: "Nkwobi", price: "₦9,000", img:"/image/nkwobi-.png", tags:["popular"] },
         { type: "list", title: "Chicken Nkwobi", price: "₦10,000" },
-        { type: "list", title: "Pepper Chicken", price: "₦5,000" },
-         { type: "list", title: "Bush Meat", price: "₦10,000" },
-           { type: "list", title: "Calabar Dry Fish", price: "₦12,000" },
+        { type: "list", title: "Pepper Chicken", price: "₦9,000" },
+         { type: "list", title: "Bush Meat", price: "₦15,000" },
+           { type: "list", title: "Calabar Dry Fish", price: "₦15,000" },
     { type: "list", title: "Dry Fish and Ugba", price: "₦12,000" },
     { type: "list", title: "Peppered Snail (Medium 1pcs)", price: "₦5,000" },
-    { type: "list", title: "Peppered Snail (Big 1pcs)", price: "₦7,000" },
+    { type: "list", title: "Peppered Snail (Big 1pcs)", price: "₦9,000" },
     { type: "list", title: "Snail (Small 2pcs)", price: "₦7,000" },
-        { type: "list", title: "Spicy Turkey", price: "₦7,000" },
-        { type: "list", title: "Ugba and Stock Fish", price: "₦10,000" },
-         { type: "list", title: "Peppered Goat Meat", price: "₦7,000" }
+        { type: "list", title: "Spicy Turkey", price: "₦9,000" },
+        { type: "list", title: "Ugba and Stock Fish", price: "₦15,000" },
+         { type: "list", title: "Peppered Goat Meat", price: "₦9,000" }
        
         
     ]
@@ -101,7 +101,7 @@ drinks: {
     { type: "card", title: "MARTINI BRUT", price: "₦35,000", img:"/image/martini.webp", tags:["popular"] },
     { type: "card", title: "MARTINI SPARKILINE ROSE 75CL", price: "₦35,000", img:"image/Martini-Rose-Sparkling-Wine-75cl-x-6-1.webp", tags:["popular"] },
     { type: "list", title: "MARTINELLIS", price: "₦5,000" },
-    { type: "list", title: "VEELETA SPARKLING WINE", price: "₦5,000" }
+    { type: "list", title: "VEELETA SPARKLING WINE", price: "₦10,000" }
   ],
 
   "Tequila": [
@@ -114,6 +114,7 @@ drinks: {
     { type: "list", title: "OLMECA WHITE", price: "₦45,000" },
     { type: "list", title: "SIERRA TEQUILA BLANCO", price: "₦30,000" },
     { type: "list", title: "SIERRA TEQUILA SPICED", price: "₦30,000" }
+    { type: "list", title: "SIERRA TEQUILA TROPICAL", price: "₦35,000" }
   ],
 
   "Red Wine": [
@@ -124,19 +125,20 @@ drinks: {
     { type: "list", title: "NEDERBURG CLASSIC", price: "₦35,000" },
     { type: "list", title: "ESCUDO ROJO RED WINE", price: "₦40,000" },
     { type: "list", title: "B & G RED WINE 750ML BOT", price: "₦20,000" },
-    { type: "list", title: "Massimo ITALY", price: "₦20,000" },
+    { type: "list", title: "MASSIMO ITALY", price: "₦20,000" },
     { type: "list", title: "KAGOR RED WINE 75CL", price: "₦20,000" },
     { type: "list", title: "FOUR COUSIN 750ML", price: "₦20,000" },
     { type: "list", title: "Eisberg Cabernet Sauvignon Red Wine 75cl", price: "₦20,000" },
     { type: "list", title: "CARLO ROSSI", price: "₦20,000" },
     { type: "list", title: "Baron Romero", price: "₦15,000" },
-    { type: "list", title: "dorado", price: "₦15,000" },
+    { type: "list", title: "DORADO", price: "₦15,000" },
     { type: "list", title: "TOMA TOMA WINE", price: "₦15,000" },
     { type: "list", title: "4TH STREET RED WINE", price: "₦15,000" },
     { type: "list", title: "Dominio Del rey", price: "₦15,000" },
     { type: "list", title: "BREE RED WINE 750ML", price: "₦15,000" },
     { type: "list", title: "Baron De Val", price: "₦10,000" },
     { type: "list", title: "DECLAN RED", price: "₦10,000" },
+    { type: "list", title: "DECLAN WHITE", price: "₦15,000" },
     { type: "list", title: "Castilo Red", price: "₦20,000" },
     { type: "list", title: "THOMAS BARTON", price: "₦45,000" },
     { type: "list", title: "Rubis Chocolate velvet 50cl", price: "₦30,000" },
@@ -170,7 +172,7 @@ drinks: {
     { type: "list", title: "Gordons", price: "₦20,000" },
     { type: "list", title: "CAPTAIN MORGAN", price: "₦20,000" },
     { type: "list", title: "BLACK ISLAND CAFE RUM 750ML", price: "₦20,000" },
-    { type: "list", title: "SMALL GORDONS 18CL", price: "₦6,000" },
+    { type: "list", title: "SMALL GORDONS 18CL", price: "₦3,500" },
     { type: "list", title: "GORDON'S DRY GIN MORINGA CITRUS BLEND 305ML", price: "₦6,000" }
   ],
 
@@ -207,7 +209,7 @@ drinks: {
     { type: "list", title: "AMERICAN HONEY STING 750ML", price: "₦25,000" },
     { type: "list", title: "Famous Grouse 700ml", price: "₦23,000" },
     { type: "list", title: "Small best Whisky", price: "₦4,500" },
-    { type: "list", title: "SEAGRAMS IMPERIALBLUE 18CL", price: "₦2,300" },
+    { type: "list", title: "SEAGRAMS IMPERIALBLUE 18CL", price: "₦2,000" },
     { type: "list", title: "WILD TURKEY AMERICAN HONEY STING 750ML", price: "₦35,000" },
     { type: "list", title: "Famous Grouse Black", price: "₦30,000" },
     { type: "list", title: "Best Whiskey 75cl", price: "₦20,000" },
@@ -235,12 +237,12 @@ drinks: {
     { type: "list", title: "goldberg", price: "₦2,000" },
     { type: "list", title: "Gulder", price: "₦2,000" },
     { type: "list", title: "Local Palm wine", price: "₦2,000" },
-    { type: "list", title: "star", price: "₦2,000" },
+    { type: "list", title: "Star Beer", price: "₦2,000" },
     { type: "list", title: "Star Radler", price: "₦2,000" },
-    { type: "list", title: "trophy", price: "₦2,000" },
+    { type: "list", title: "Trophy", price: "₦2,000" },
     { type: "list", title: "TROPHY STOUT", price: "₦2,000" },
     { type: "list", title: "FOREST POWER GINGER DRINK 500ML", price: "₦2,000" },
-    { type: "list", title: "SMIRNOFF ICE DOUBLE BLACK BOT 300ML", price: "₦2,000" },
+    { type: "list", title: "SMIRNOFF ICE DOUBLE BLACK BOT 300ML", price: "₦3,000" },
     { type: "list", title: "guiness smooth", price: "₦2,000" },
     { type: "list", title: "TIGER BEER 45CL", price: "₦2,000" },
     { type: "list", title: "HEINIKEN DRAUGHT", price: "₦2,500" },
@@ -280,35 +282,38 @@ drinks: {
     { type: "list", title: "fayrouz", price: "₦1,000" },
     { type: "list", title: "PEPSI 60CL PET (N200)", price: "₦1,000" },
     { type: "list", title: "SPRITE 50 CL", price: "₦1,000" },
-    { type: "list", title: "NESTLE PURELIFE TABLE WATER 60CL", price: "₦1,000" },
-    { type: "list", title: "MALTINA CLASS BOTTLE", price: "₦1,000" },
+    { type: "list", title: "NESTLE PURELIFE TABLE WATER 60CL", price: "₦3,500" },
+    { type: "list", title: "MALTINA CLASSIC BOTTLE", price: "₦1,000" },
+    { type: "list", title: "MALTA GUINESS BOTTLE", price: "₦1,500" },
     { type: "list", title: "COCA-COLA CAN 33CL", price: "₦1,000" },
     { type: "list", title: "PEPSI CAN 33CL", price: "₦1,000" },
     { type: "list", title: "AMSTEL MALT CAN", price: "₦1,000" },
     { type: "list", title: "DUBIC MALT CAN", price: "₦1,000" },
     { type: "list", title: "TEEM TONIC WATER CAN", price: "₦1,000" },
     { type: "list", title: "PEAK YOUGHURT 1LT", price: "₦4,000" },
-    { type: "list", title: "EVA WATER BIG 150CL", price: "₦1,500" }
+    { type: "list", title: "EVA WATER BIG 150CL", price: "₦2,000" }
   ],
 
   "Cocktails": [
-    { type: "card", title: "LONG ISLAND", price: "₦5,500", img:"image/Long-Island-Iced-Tea-7.jpg", tags:["popular"] },
+    { type: "card", title: "LONG ISLAND", price: "₦10,000", img:"image/Long-Island-Iced-Tea-7.jpg", tags:["popular"] },
     { type: "card", title: "Strawberry Margarita Frozen", price: "₦5,500", img:"image/Strawberry-Margarita.jpg", tags:["popular"] },
-    { type: "list", title: "PINA COLADA", price: "₦5,000" },
-    { type: "list", title: "MARGARITA", price: "₦4,500" },
-    { type: "list", title: "TEQUILA SUNRISE", price: "₦3,000" },
-    { type: "list", title: "SWEET STRAWBERRY MAGARITA", price: "₦5,500" }
+    { type: "list", title: "PINA COLADA", price: "₦9,500" },
+    { type: "list", title: "CLASSIC MARGARITA", price: "₦9,000" },
+    { type: "list", title: "TEQUILA SUNRISE", price: "₦9,000" },
+    { type: "list", title: "SWEET STRAWBERRY MAGARITA", price: "₦9,500" }
   ],
 
   "Mocktails": [
     { type: "card", title: "VIRGIN COLADA", price: "₦3,500", img:"image/virgin-colada.jpg", tags:["popular"] },
-    { type: "card", title: "VIRGIN SUNSET", price: "₦3,000", img:"/image/sunset.jpeg", tags:["popular"] },
-    { type: "list", title: "BLUE HAWAII", price: "₦4,500" },
+    { type: "card", title: "VIRGIN SUNSET", price: "₦7,000", img:"/image/sunset.jpeg", tags:["popular"] },
+    { type: "list", title: "BLUE HAWAII", price: "₦7,000" },
     { type: "list", title: "BLUE LAGOON", price: "₦4,500" },
-    { type: "list", title: "BLUE ARENA", price: "₦2,500" },
-    { type: "list", title: "PINK ARENA", price: "₦2,500" },
-    { type: "list", title: "Chapman", price: "₦2,000" },
+    { type: "list", title: "BLUE ARENA", price: "₦7,000" },
+    { type: "list", title: "PINK ARENA", price: "₦7,000" },
+    { type: "list", title: "Chapman", price: "₦6,000" },
     { type: "list", title: "Sweet Strawberry Frozen", price: "₦2,500" }
+    { type: "list", title: "OLMECA TEQUILA SHOT", price: "₦4,000" },
+    { type: "list", title: "SIERRA TEQUILA SHOT", price: "₦2,000" },
   ]
 }
 
