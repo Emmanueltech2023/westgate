@@ -295,262 +295,167 @@ const MENU = {
 };
 
 /* ---------- Elements ---------- */
-
 const pillsEl = document.getElementById('pills');
-
 const contentEl = document.getElementById('content');
-
 const tabEls = document.querySelectorAll('.tab');
-
-
+const searchInput = document.getElementById('menuSearch');
 
 /* ---------- App state ---------- */
-
-let currentTab = 'food';         // 'food' or 'drinks'
-
-let currentCategory = null;      // e.g. 'Mains'
-
-
+let currentTab = 'food';         
+let currentCategory = null;      
+let searchQuery = '';
 
 /* ---------- Helpers ---------- */
-
 const el = (tag, cls, html) => {
-
   const d = document.createElement(tag);
-
   if (cls) d.className = cls;
-
   if (html !== undefined) d.innerHTML = html;
-
   return d;
-
 };
-
 const safe = s => String(s || '');
 
-
-
 /* ---------- Render pills (categories) ---------- */
-
 function renderPills(){
-
   pillsEl.innerHTML = '';
+  
+  // If user is searching, hide category pills entirely to show global results
+  if (searchQuery.trim() !== '') {
+    pillsEl.parentNode.style.display = 'none';
+    return;
+  }
+  pillsEl.parentNode.style.display = 'block';
 
   const categories = Object.keys(MENU[currentTab] || {});
-
   if(!categories.length){
-
     pillsEl.appendChild(el('div','hint','No categories'));
-
     currentCategory = null;
-
     renderContent();
-
     return;
-
   }
-
-  // default to first if none set
-
   if(!currentCategory || !categories.includes(currentCategory)){
-
     currentCategory = categories[0];
-
   }
-
-  categories.forEach((c,i)=>{
-
+  categories.forEach((c)=>{
     const btn = el('button','category', safe(c));
-
     btn.type = 'button';
-
     btn.classList.toggle('active', c === currentCategory);
-
-    btn.addEventListener('click', ()=>{
-
+    btn.addEventListener('click', () => {
       currentCategory = c;
-
       document.querySelectorAll('.category').forEach(x=>x.classList.remove('active'));
-
       btn.classList.add('active');
-
       renderContent();
-
-      // keep pill centered on click (good for long pill lists on mobile)
-
       btn.scrollIntoView({ inline:'center', behavior:'smooth', block:'nearest' });
-
     });
-
     pillsEl.appendChild(btn);
-
   });
-
 }
 
-
-
-/* ---------- Render content area (cards & lists) ---------- */
-
+/* ---------- Render content area (with built-in search logic) ---------- */
 function renderContent(){
-
   contentEl.innerHTML = '';
+  let itemsToRender = [];
 
-  if(!currentCategory){
-
-    contentEl.appendChild(el('div','hint','No items to display.'));
-
-    return;
-
+  if (searchQuery.trim() !== '') {
+    // Global search within active tab across all its categories
+    const categories = Object.keys(MENU[currentTab] || {});
+    categories.forEach(cat => {
+      const filtered = MENU[currentTab][cat].filter(item => 
+        item.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+        (item.desc && item.desc.toLowerCase().includes(searchQuery.toLowerCase()))
+      );
+      itemsToRender = itemsToRender.concat(filtered);
+    });
+  } else {
+    // Normal Category View
+    if(!currentCategory) {
+      contentEl.appendChild(el('div','hint','No items to display.'));
+      return;
+    }
+    itemsToRender = MENU[currentTab][currentCategory] || [];
   }
 
-  const items = MENU[currentTab][currentCategory] || [];
-
-  if(!items.length){
-
-    contentEl.appendChild(el('div','hint','No items in this category.'));
-
+  if(!itemsToRender.length){
+    contentEl.appendChild(el('div','hint','No matching items found.'));
     return;
-
   }
-
-
-
-  // container grid
 
   const grid = el('div','menu-grid');
 
-
-
-  // iterate and render
-
-  items.forEach(it=>{
-
+  itemsToRender.forEach(it=>{
     if(it.type === 'card'){
-
       const card = el('article','menu-card');
-
       card.innerHTML = `
-
         <img src="${safe(it.img)}" alt="${safe(it.title)}" loading="lazy">
-
         <div class="card-body">
-
           <h3>${safe(it.title)}</h3>
-
           <p class="desc">${safe(it.desc || '')}</p>
-
           <div class="meta">
-
             <div>
-
               ${ (it.tags || []).map(t=>`<span class="badge">${safe(t)}</span>`).join(' ') }
-
             </div>
-
             <div class="price-pill">${safe(it.price || '')}</div>
-
           </div>
-
         </div>
-
       `;
-
       grid.appendChild(card);
-
     } else {
-
-      // list item should span full row for clarity
-
       const list = el('div','menu-list-item list-span');
-
       list.innerHTML = `
-
         <div>
-
           <div class="title">${safe(it.title)}</div>
-
           <div class="sm">${safe(it.desc || '')}</div>
-
         </div>
-
         <div class="price-tag">${safe(it.price || '')}</div>
-
       `;
-
       grid.appendChild(list);
-
     }
-
   });
-
-
 
   contentEl.appendChild(grid);
-
 }
-
-
 
 /* ---------- Tab switching ---------- */
-
 tabEls.forEach(t=>{
-
   t.addEventListener('click', ()=>{
-
     tabEls.forEach(x=>x.classList.remove('active'));
-
     t.classList.add('active');
-
     currentTab = t.dataset.tab;
-
     currentCategory = null;
-
+    
+    // Reset search when switching primary tabs
+    searchQuery = '';
+    if(searchInput) searchInput.value = '';
+    
     renderPills();
-
     renderContent();
-
   });
-
 });
 
-
-
-/* ---------- Init ---------- */
-
-document.addEventListener('DOMContentLoaded', ()=>{
-
-  // set first tab active if none
-
-  const activeTabBtn = document.querySelector('.tab.active');
-
-  if(activeTabBtn) currentTab = activeTabBtn.dataset.tab || 'food';
-
-  renderPills();
-
-  renderContent();
-
-});
-
-
-
-
-
-
-
-function spin(){
-
-  document.getElementById('spinner').style.display="block"
-
-  document.getElementById('spin').style.backgroundColor="none"
-
-  document.getElementById('spin').style.display="none"
-
+/* ---------- Live Search Input Event ---------- */
+if (searchInput) {
+  searchInput.addEventListener('input', (e) => {
+    searchQuery = e.target.value;
+    renderPills(); // updates pill visibility layout context
+    renderContent();
+  });
 }
 
+/* ---------- Init ---------- */
+document.addEventListener('DOMContentLoaded', ()=>{
+  const activeTabBtn = document.querySelector('.tab.active');
+  if(activeTabBtn) currentTab = activeTabBtn.dataset.tab || 'food';
+  renderPills();
+  renderContent();
+});
 
+/* ---------- Initial Screen Spinner Logic ---------- */
+function spin(){
+  const loader = document.getElementById('spi');
+  const appBody = document.getElementById('spinner');
+  
+  if(loader) loader.style.display = "none";
+  if(appBody) appBody.style.display = "block";
+}
 
-setTimeout(spin,1000)
-
-let a = document.getElementById('spi').addEventListener("load" ,spin) 
-
+// Controls screen presentation layout
+setTimeout(spin, 1200);
