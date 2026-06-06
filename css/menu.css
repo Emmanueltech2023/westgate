@@ -5,7 +5,6 @@
 html,body { height:100%; }
 body {
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-  /* background: #faf6f4; */
   background: linear-gradient(90deg, #5f3d3d, #605d5d);
   color: #222;
   -webkit-font-smoothing:antialiased;
@@ -23,46 +22,53 @@ body {
   --shadow: 0 6px 18px rgba(15,10,10,0.06);
 }
 
-
 #spinner{
-  /* background-image: url(/image/slider-02.webp); */
   background-repeat: repeat;
   width: 100%;
-  
 }
 
-.spinner{
-  background-color: white;
-  flex-direction: column;
+/* Fix structural loading issues wrapper */
+.spinal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100vh;
+  background: linear-gradient(90deg, #5f3d3d, #605d5d);
+  display: flex;
   justify-content: center;
   align-items: center;
-  /* height: 100vh; */
-  overflow-y: hidden;
-  display: flex;
+  z-index: 9999;
 }
 
 #spin{
-  margin: auto;
+  border: 15px solid rgba(0, 0, 0, 0.2); 
+  border-top: 15px solid #fff; 
+  border-bottom: 15px solid #fff; 
+  border-radius: 50%; 
+  height: 150px; 
+  width: 150px;
   display: flex;
   justify-content: center;
-  align-content: center;
-  margin-top: 250px;
+  align-items: center;
   animation: spin 1s infinite linear;
 }
 
-@keyframes spin{
-  0%{transform: rotate('0deg');}
-  100%{transform: rotate(360deg);}
+#spin img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
 }
 
-
+@keyframes spin{
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(360deg);}
+}
 
 /* ---------- Header (sticky) ---------- */
 .header {
   position: sticky;
   top: 0;
   z-index: 60;
-   background: linear-gradient(180deg,var(--maroon), #4f1b1bbe);
+  background: linear-gradient(180deg, var(--maroon), #4f1b1bbe);
   color: #fff;
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
   padding: 12px 10px;
@@ -79,6 +85,42 @@ body {
   justify-content: space-between;
 }
 
+/* Search bar styling */
+.search-container {
+  max-width: 980px;
+  margin: 10px auto 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 10px 15px 10px 40px;
+  border-radius: 25px;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+.search-container input::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.search-container input:focus {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.search-container .search-icon {
+  position: absolute;
+  left: 15px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
+}
+
 /* brand */
 .brand { display:flex; align-items:center; gap:10px; }
 .logo {
@@ -86,7 +128,7 @@ body {
   background: #ffffff4f;
   display:flex; align-items:center; justify-content:center; font-weight:700; color:#fff;
 }
-.logo img { width:102px; height:102px; object-fit:contain; }
+.logo img { width:44px; height:44px; object-fit:contain; }
 .brand-text strong{ display:block; font-size:14px; letter-spacing:.4px; }
 .brand-text small{ font-size:11px; opacity:.9; }
 
@@ -127,7 +169,7 @@ body {
   background:#fff;
   border:1px solid #e7e2e1;
   font-weight:600;
-  font-size: 17px;
+  font-size: 16px;
   cursor:pointer;
   white-space:nowrap;
   transition: background .18s ease, transform .12s;
@@ -147,7 +189,6 @@ body {
   padding: 0 12px;
 }
 
-/* grid auto-fit for cards, list items will span */
 .menu-grid {
   display:grid;
   gap:14px;
@@ -174,32 +215,30 @@ body {
 .card-body p.desc { font-size:13px; color:#6b6b6b; margin-bottom:8px; min-height:34px; }
 .card-body .meta { display:flex; gap:8px; align-items:center; justify-content:space-between; }
 
-/* tag badge small */
 .badge {
   display:inline-block;
-  padding:7px 8px;
+  padding:5px 8px;
   text-align: center;
-  font-size:12px;
+  font-size:11px;
   border-radius:999px;
-  background: rgba(128, 128, 128, 0.31);
-  color: var(--maroon);
+  background: rgba(128, 128, 128, 0.15);
+  color: #333;
   font-weight:700;
-   margin-right: 6px; 
+  margin-right: 4px; 
   margin-bottom: 4px;
 }
 
-/* price pill inside card */
 .price-pill {
   background: var(--maroon);
   color: #fff;
   padding:6px 10px;
-  margin-left: -10px;
   border-radius:999px;
   font-weight:700;
-  font-size:15px;
+  font-size:14px;
+  white-space: nowrap;
 }
 
-/* List item style (span full width) */
+/* List item style */
 .menu-list-item {
   background: var(--card);
   border-radius:10px;
@@ -211,7 +250,7 @@ body {
   transition: transform .12s;
 }
 .menu-list-item:hover { transform: translateY(-4px); }
-.menu-list-item .title { font-weight:700;font-size: 20px; }
+.menu-list-item .title { font-weight:700; font-size: 16px; text-align: left; }
 .menu-list-item .sm { color:#666; font-size:13px; }
 .menu-list-item .price-tag {
   background: var(--maroon);
@@ -219,41 +258,38 @@ body {
   padding:6px 12px;
   border-radius:999px;
   font-weight:800;
+  font-size: 14px;
+  white-space: nowrap;
 }
 
 footer{
-    background: linear-gradient(180deg,black, #4f1b1b);
-    text-align: center;
-    padding: 20px;
-    font-size: 14px;
-    color: #fff; 
-    overflow: hidden;
-    white-space: nowrap;
-    box-sizing: border-box;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    margin-top: 20px;
-    height: 50px;
-   position: sticky;
-    bottom: 0; 
+  background: linear-gradient(180deg,black, #4f1b1b);
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  color: #fff; 
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  margin-top: 20px;
+  height: 50px;
+  position: sticky;
+  bottom: 0; 
 }
 .foot{
-    margin-top: -10px;
-  animation: scroll 8s linear infinite;
+  margin-top: -50px;
+  animation: scroll 12s linear infinite;
 }
 @keyframes scroll {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
 
-
-/* helper for list groups to span grid columns */
 .list-span { grid-column: 1 / -1; }
+.hint { padding:18px; text-align:center; color:#fff; font-weight: bold; }
 
-/* empty / hint */
-.hint { padding:18px; text-align:center; color:#666; }
-
-/* ---------- Responsive tweaks ---------- */
 @media(min-width:900px){
   .menu-card img { height:180px; }
 }
